@@ -1,0 +1,116 @@
+
+body.home {
+	background: url(../../library/img/heroes/bg-home.jpg) center center no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	&.active {
+		z-index: 99;
+	}
+}
+
+.section-home {
+	height: 100vh;
+	.wrapper {
+		height: 100%;
+	}
+}
+.home-content {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	h1,h2 {
+		color: white;
+	}
+	h1 {
+		font-family: 'encode-reg';
+		font-size: 17px;
+		text-transform: capitalize;
+	}
+	h2 {
+		font-family: 'encode-bold';
+		text-transform: uppercase;
+		font-size: 24px;
+	}
+	.divider {
+		background: white;
+		height: 3px;
+		width: 60px;
+		margin: 20px auto;
+		display: block;
+	}
+	.btns {
+		.btn {
+			display: block;
+			color: white;
+			font-family: 'encode-bold';
+			float: left;
+			width: 48%;
+			max-width: 200px;
+			border-radius: 0;
+			font-size: 12px;
+			&.btn-primary {
+				background: #edb729;
+				border: 2px solid #edb729;
+				margin-right: 4%;
+				&:hover {
+					border: 3px solid #edb729;
+					background-color: transparent;
+				}
+			}
+			&.btn-secondary {
+				border: 2px solid white;
+				&:hover {
+					background-color: #fff;	
+					color: #edb729;
+				}
+			}
+		}
+	}
+}
+
+@include bp(eight-column) {
+	.home-content {
+		h1 {
+			font-size: 26px;
+		}
+		h2 {
+			font-size: 42px;
+		}
+		.divider {
+			margin: 30px auto;
+		}
+		.btns {
+			margin: 0 auto;
+			display: block;
+			width: 415px;
+			.btn {
+				float: left;
+				border-radius: 0;
+				font-size: 12px;
+				line-height: 2.4;
+				&.btn-primary {
+					background: #edb729;
+					border: 3px solid #edb729;
+					margin-right: 4%;
+				}
+				&.btn-secondary {
+					border: 3px solid white;
+				}
+			}
+		}
+	}
+}
+
+@include bp(twelve-column) {
+
+}
+
+@include bp(sixteen-column) {
+	
+}
+
+
+
+
+

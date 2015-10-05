@@ -1,0 +1,59 @@
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+body.login {
+  background: #fff url(../img/bg-admin-login.png) 0 0 repeat; }
+
+#login {
+  width: 356px; }
+  #login h1 a {
+    background: transparent url(../img/logo-peoplecorp-header-16col.png) no-repeat top center;
+    /* make sure to replace this! */
+    width: 342px;
+    height: 69px;
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto 12px; }
+  #login form {
+    padding: 26px 24px 46px;
+    font-weight: normal;
+    background: white;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px; }
+    #login form .input {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+      font-weight: 200;
+      font-size: 24px;
+      width: 97%;
+      padding: 3px;
+      margin-top: 2px;
+      margin-right: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #E5E5E5;
+      background: #FBFBFB;
+      outline: none;
+      box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2); }
+
+#wp-submit {
+  background-color: #0047bb;
+  background-image: linear-gradient(#0047bb, #003ea2);
+  border: 1px solid #003ea2;
+  border-bottom: 1px solid #003688;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 0 #6ea8ff;
+  color: #fff;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #003488;
+  width: 40%; }
+  #wp-submit:hover {
+    background-color: #0044b1;
+    background-image: linear-gradient(#0044b1, #003d97);
+    box-shadow: inset 0 1px 0 0 #086bff;
+    cursor: pointer; }
+  #wp-submit:active {
+    border: 1px solid #1d4a8c;
+    border-bottom: 1px solid #091631;
+    box-shadow: inset 0 0 8px 4px #003488, 0 1px 0 0 #eee; }

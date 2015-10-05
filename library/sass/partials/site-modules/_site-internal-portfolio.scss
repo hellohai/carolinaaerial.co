@@ -1,0 +1,270 @@
+body.portfolio {
+	overflow: auto;
+	.section-internal-hero {
+		background: url('../../library/img/heroes/bg-portfolio.jpg') center center no-repeat;
+		background-size: cover;
+		height: 325px;
+	}
+}
+.portfolio-container {
+	.controls {
+		padding: 2%;
+		color: #eee;
+		.filter-trigger {
+			text-align: left;
+			display: block;
+			margin: 15px auto 0;
+			width: 100px;
+			font-family: 'encode-bold';
+			text-transform: uppercase;
+			color: #4e4f53;
+			font-size: 19px;
+			cursor: pointer;
+			position: relative;
+			&:before,&:after {
+				content: "";
+				width: 17px;
+				height: 2px;
+				background-color: #4e4f53;
+				display: block;
+				position: absolute;
+				border-radius: 5px;
+				top: 12px;
+				transition: rotate .3s;
+				transition: all .3s;
+			}
+			&:before { // arrow piece
+				transform: rotate(45deg);
+				right: 10px;
+			}
+			&:after { // arrow piece
+				transform: rotate(-45deg);
+				right: -1px;
+			}
+			&.show {
+				&:before {
+					transform: rotate(-45deg);
+				}
+				&:after {
+					transform: rotate(45deg);
+				}
+			}
+		}
+		.filter-btn-container {
+			max-height: 0;
+			opacity: 0;
+			transition: max-height opacity .3s;
+			transition: all .3s;
+			&.show {
+				max-height: 1000px;
+				opacity: 1;
+			}
+		}
+		.btn-filter {
+			display: block;
+			margin: 10px auto;
+			text-align: center;
+			padding: 0 20px;
+			line-height: 2;
+			background: transparent;
+			border: 0;
+			color: #3d3e42;
+			text-transform: uppercase;
+			font-family: 'encode-light';
+			font-size: 18px;
+			cursor: pointer;
+			&.active {
+				//border: 1px solid #3d3e42;
+				color: #e5a810;
+			}
+			&:focus {
+				outline: 0 none;
+			}
+			& + label {
+				margin-left: 1em;
+			}
+		}
+	}
+}
+
+.container {
+	padding: 0;
+	text-align: justify;
+	font-size: 0.1px;
+	-webkit-backface-visibility: hidden;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+	.mix {
+		height: 215px;
+		position: relative;
+		text-align: left;
+		display: none;
+		cursor: pointer;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: center center;
+		&:hover {
+			&:before {
+				background: transparent;
+			}
+		}
+		.btn {
+			display: none;
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 150px;
+			margin: 0 auto;
+			border: none;
+			background-color: #e5a810;
+			color: white;
+			font-size: 12px;
+			font-family: 'encode-bold';
+			z-index: 1;
+			bottom: 100px;
+			&:hover {
+				background-color: darken(#e5a810, 10%);
+			}
+		}
+		&:before { // overlay
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: rgba(black, .2);
+			transition: .3s all;
+		}
+		&:after { // title
+			content: attr(data-title);
+			color: white;
+			font-size: 32px;
+			font-family: 'encode-bold';
+			text-transform: uppercase;
+			text-align: center;
+			position: absolute;
+			top: 80px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+	.img-edenton {
+		background: url('../../library/img/portfolio/edenton.jpg');
+		background-size: cover;
+	}
+	.img-red-hat {
+		background: url('../../library/img/portfolio/red-hat.jpg');
+		background-size: cover;
+	}
+	.img-hicks {
+		background: url('../../library/img/portfolio/hicks.jpg');
+		background-size: cover;
+	}
+	.img-chitown {
+		background: url('../../library/img/portfolio/chitown.jpg');
+		background-size: cover;
+	}
+}
+
+.container .mix,
+.container .gap {
+  //display: inline-block;
+  width: 100%;
+}
+
+.container .mix:before{
+  content: '';
+  display: inline-block;
+  padding-top: 60%;
+}
+
+@include bp(eight-column) {
+	.container {
+		.mix {
+			height: 350px;
+			&:after {
+				font-size: 50px;
+				top: 130px;
+			}
+			.btn { display: block; }
+		}
+	}
+}
+
+@include bp(twelve-column) {
+	.portfolio-container {
+		.controls {
+			padding: 0 0 20px;
+			width: auto;
+			display: table;
+			margin: 0 auto;
+			.filter-trigger { display: none; }
+			.filter-btn-container {
+				opacity: 1;
+				&.show {
+					max-height: 1000px;
+					opacity: 1;
+				}
+			}
+			.btn-filter {
+				display: inline-block;
+				position: relative;
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					height: 25px;
+					width: 1px;
+					background-color: black;
+					top: 5px;
+					left: 0px;
+				}
+				&:first-of-type {
+					&:after {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.container {
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 100%;
+		}
+		.mix {
+			height: 550px;
+			&:after { // title
+				font-size: 65px;
+				top: 180px;
+			}
+			.btn {
+				bottom: 230px;
+			}
+		}
+		.img-edenton {
+			background: transparent url('../../library/img/portfolio/edenton.jpg') center center no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+@include bp(sixteen-column) {
+	.container {
+		.mix {
+			height: 745px;
+			&:after { // title
+				font-size: 75px;
+				top: 280px;
+			}
+			.btn {
+				bottom: 300px;
+			}
+		}
+	}	
+}
