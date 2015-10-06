@@ -7,7 +7,7 @@
 
 (function(window, document, $, R, J) {
 	
-	// Setup our Responsive Content Object	
+	// Setup Responsive Content Object	
 	R.create({ 
 		prop: "width",
 		prefix: "src",
@@ -42,6 +42,8 @@
 		$('.contact-form').toggleClass('show');
 		$(this).addClass('hide');
 	});
+	
+	// contact form label interaction
 	$('label').click(function() {
 		$(this).parent('fieldset').addClass('label-up');
 		$(this).next('input').focus();
@@ -52,7 +54,7 @@
 	});
 	
 
-	// Change Header on Scroll
+	// Change header on scroll, fixed in this case
 	var changeHeader = 200;
 	$(window).scroll(function() {
 		var scroll = getCurrentScroll();
@@ -66,14 +68,12 @@
 		return window.pageYOffset || document.documentElement.scrollTop;
 	}
 	
-			
-
+	// changing overflow on body on different pages b/c of full screen menu
 	$('body:not(.about)').parent('html').css({'overflow': 'auto'});
 	$('body.home,body.contact').parent('html').css({'overflow': 'hidden'});
 
 
-	/*-----Internal Items------*/	
-	// THE BLACK MAGIC OF RESPONSIVE JAVASCRIPT LIVES BELOW....
+	// Breakpoint-specific functions
 	var jRes = new J([ // Setup of jResponse
 		{ label: '4', enter: 0, exit: 639 },
 		{ label: '8', enter: 640, exit: 959 },
@@ -159,17 +159,6 @@
 							$('.close-menu').stop().fadeOut(300);
 						};
 					
-					$('.close-menu').on({
-						'click' : function(){
-							$menulink.trigger('click');
-							return false;
-						},
-						'touchstart' : function(){
-							$(this).trigger('click');
-							return false;
-						}
-					});
-					
 					$menulink.on({
 						'click' : function(){
 							$menu.toggleClass('active');
@@ -194,13 +183,7 @@
 				}());
 			},
 			exit: function() {
-				// Main Navigation Element
-				$('.navigation-list, .has-menu, .sub-menu').removeClass('active');
-				$('.close-menu').fadeOut(500);
-
-				// Header Search Element
-				$('.search-form-container').css({'max-height':'50px'});
-				$('.search-form-container [type="submit"]').removeClass('visible');
+				
 			}
 		}
 	]);
